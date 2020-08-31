@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "user1")
+public class User1 {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,11 +28,11 @@ public class User {
 	@Column(name="purpose")
     private String purpose;
 	
-	public User() {
+	public User1() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(String username, String password, String email, String purpose) {
+	public User1(String username, String password, String email, String purpose) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -73,6 +73,6 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [uid=" + uid + ", username=" + username + ", password=" + password + ", email=" + email + ", purpose=" + purpose + "]";
+		return "User1 [uid=" + uid + ", username=" + username + ", password=" + password + ", email=" + email + ", purpose=" + purpose + "]";
 	}
 }

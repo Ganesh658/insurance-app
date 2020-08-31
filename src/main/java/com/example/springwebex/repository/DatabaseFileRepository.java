@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.example.springwebex.model.DatabaseFile;
-import com.example.springwebex.model.User;
+import com.example.springwebex.model.User1;
 
 @Repository
 public interface DatabaseFileRepository extends JpaRepository<DatabaseFile, String> {

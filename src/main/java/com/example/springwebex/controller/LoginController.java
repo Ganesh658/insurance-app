@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.springwebex.model.DatabaseFile;
-import com.example.springwebex.model.User;
+import com.example.springwebex.model.User1;
 import com.example.springwebex.service.DatabaseFileService;
 import com.example.springwebex.service.LoginService;
 
@@ -38,20 +38,20 @@ public class LoginController {
 	
 	@RequestMapping("/userRegistration")    
     public String showform(ModelMap model){    
-		model.put("command", new User());  
+		model.put("command", new User1());  
         return "userRegistration";   
     }    
 	
 	@RequestMapping(value="/getAllUserDetails",  method = RequestMethod.GET)
     public String getAllUserDetails(ModelMap model) {
-		List<User> usersList = loginService.getAllUserDetails();
+		List<User1> usersList = loginService.getAllUserDetails();
 		 model.put("usersList", usersList);
         return "viewUserDetails";
     }
 	
 	@RequestMapping(value="/addUserDetails", method = RequestMethod.POST)
-    public String addUserDetails(@ModelAttribute("user") User user) {
-		User newUser =  loginService.save(user);
+    public String addUserDetails(@ModelAttribute("user") User1 user) {
+		User1 newUser =  loginService.save(user);
 		if(newUser != null){
 			return "redirect:/userRegistration";
 		}else{
